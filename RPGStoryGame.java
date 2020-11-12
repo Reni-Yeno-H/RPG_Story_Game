@@ -3,11 +3,13 @@ package rpgstorygame; //Erase thie depending on the IDE you are using.
 import java.util.Scanner;
 import java.io.PrintStream;
 import java.io.File;
+import javax.swing.*;
 //import java.io.FileReader;
 
 public class RPGStoryGame {
 
     public static void displayIntro() {
+        
 
         System.out.println("This is a work in progross.\nNote: "
                 + "You get one life, endless tries.");
@@ -580,6 +582,13 @@ public class RPGStoryGame {
     private boolean eventChecker;
     private static int choiceClassChange1;
 
+    public RPGStoryGame() {
+        JFrame sceneDescription1 = new JFrame();
+        sceneDescription1.setSize(500,500);
+        sceneDescription1.setLayout(null);
+        sceneDescription1.setVisible(true);
+        
+    }
     public static void main(String[] args) throws Exception {
         //Scanner pastRecords = new Scanner("pastRecords.txt");<
         //PrintStream printToFile = new PrintStream("another.txt");
@@ -587,7 +596,9 @@ public class RPGStoryGame {
         File pastRecords = new File("pastRecords.txt");
         
         String save;
-
+        
+        
+    
         if (menuSaveAction.equals("yes")) {
 
             try {
@@ -621,6 +632,11 @@ public class RPGStoryGame {
 
                 save = menuSaveAction.nextLine();
                 if (save.equals("yes")) {
+                    
+                    System.out.println("What's your name player?");
+                    name = askName.next();
+                    System.out.println("Welcome, " + name + ".");
+                    
                     try {
                         pastRecords.createNewFile();
                     } catch (Exception e) {
@@ -680,7 +696,20 @@ public class RPGStoryGame {
             } catch (InterruptedException e) {
                 System.out.println("clock slowed");
             }
+            
+            //JFrame sceneDescription1 = new JFrame();
+            //sceneDescription1.setSize(500,500);
+            //sceneDescription1.setLayout(null);
+            //sceneDescription1.setVisible(true);
+            //sceneDescription1.
+            //JLabel label1 = new JLabel("Test");
+            //To change the text in the label:
 
+            //label1.setText("Label Text");
+            //And finally to clear the label:
+
+            //label1.setText("");
+            
             displayIntro();
             int choiceNumberOne = exploreOne(choice);
             decideOne(choiceNumberOne);
@@ -735,4 +764,45 @@ public class RPGStoryGame {
         }
 
     }
+}
+class Scenes extends RPGStoryGame{
+
+    
+    
+    
+}
+class ScenesDialogue extends RPGStoryGame{
+
+    
+    
+}
+class levelUpDialogue extends RPGStoryGame{
+
+    
+    
+    
+}
+class levelUpSkills extends RPGStoryGame{
+
+    
+    
+    
+}
+class death extends RPGStoryGame{
+
+    
+    
+    
+}
+class secrets extends RPGStoryGame{
+
+    
+    
+    
+}
+class openRewards extends RPGStoryGame{
+
+    
+    
+    
 }
