@@ -646,7 +646,11 @@ public class RPGStoryGame {
                     System.out.println("You have created a save file: " + pastRecords.getPath());
                     System.out.println("The location of the save file is in: " + pastRecords.getAbsolutePath());
                 }
-                
+                if(save.equals("no")) {
+                    System.out.println("What's your name player?");
+                    name = askName.next();
+                    System.out.println("Welcome, " + name + ".");
+                }
                 
             } else {
                 Scanner pastRecordNameReader = new Scanner(pastRecords);
@@ -806,3 +810,4 @@ class openRewards extends RPGStoryGame{
     
     
 }
+
