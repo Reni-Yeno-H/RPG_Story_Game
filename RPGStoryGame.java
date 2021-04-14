@@ -1,4 +1,4 @@
-package rpgstorygame; //Erase thie depending on the IDE you are using.
+package rpgstorygame; //Erase this depending on the IDE you are using.
 
 import java.util.Scanner;
 import java.io.PrintStream;
